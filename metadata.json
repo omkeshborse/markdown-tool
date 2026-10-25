@@ -1,0 +1,6 @@
+{
+  "name": "Production-Ready Next.js Starter",
+  "description": "A clean, SEO-friendly Next.js App Router starter project configured with TypeScript, Tailwind CSS, and Netlify deployment readiness.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
