@@ -1,17 +1,12 @@
 import type { MetadataRoute } from "next";
-
-/**
- * Placeholder domain for sitemap.xml generation.
- * NOTE: Replace this placeholder ("https://example.com") with your production domain
- * or configure the NEXT_PUBLIC_SITE_URL environment variable prior to deployment.
- */
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+import { getSiteUrl } from "@/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const siteUrl = getSiteUrl();
+
   return [
     {
-      url: SITE_URL,
-      lastModified: new Date(),
+      url: `${siteUrl}/`,
       changeFrequency: "monthly",
       priority: 1.0,
     },

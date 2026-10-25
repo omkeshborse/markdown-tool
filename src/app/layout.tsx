@@ -1,27 +1,26 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { getSiteUrl } from "@/config/site";
 import "./globals.css";
 
-/**
- * Placeholder domain for metadataBase and canonical URLs.
- * NOTE: Replace this placeholder ("https://example.com") with your production domain
- * or configure the NEXT_PUBLIC_SITE_URL environment variable prior to production deployment.
- */
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Production-Ready Next.js Starter",
     template: "%s | Production-Ready Next.js Starter",
   },
   description:
     "A clean, SEO-friendly Next.js App Router starter project configured with TypeScript, Tailwind CSS, and Netlify deployment readiness.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Production-Ready Next.js Starter",
     description:
       "A clean, SEO-friendly Next.js App Router starter project configured with TypeScript, Tailwind CSS, and Netlify deployment readiness.",
-    url: SITE_URL,
+    url: "/",
     siteName: "Production-Ready Next.js Starter",
     locale: "en_US",
     type: "website",
